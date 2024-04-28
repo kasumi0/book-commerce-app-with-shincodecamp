@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { getDetailBook } from "../../lib/microcms/client";
 
-export default async ({ params }: { params: { id: string } }) => {
+const DetailBook = async ({ params }: { params: { id: string } }) => {
   const book = await getDetailBook(params.id);//SSR  
 
   return (
@@ -33,3 +33,4 @@ export default async ({ params }: { params: { id: string } }) => {
     </div>
   );
 };
+export default DetailBook

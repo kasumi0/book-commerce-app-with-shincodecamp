@@ -3,8 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { BookType } from "../types/types";
 
-
-export default ({ purchaseDetailBook }: { purchaseDetailBook: BookType}) => {
+const PurchaseProduct = ({
+  purchaseDetailBook,
+}: {
+  purchaseDetailBook: BookType;
+}) => {
   return (
     <Link
       href={`/book/${purchaseDetailBook.id}`}
@@ -29,3 +32,4 @@ export default ({ purchaseDetailBook }: { purchaseDetailBook: BookType}) => {
   );
 };
 
+export default PurchaseProduct;

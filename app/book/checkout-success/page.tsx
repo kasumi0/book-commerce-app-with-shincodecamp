@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export default () => {
+const PurchaseSuccess = () => {
   const [bookUrl, setBookUrl] = useState(null);
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
@@ -53,3 +53,5 @@ export default () => {
     </div>
   );
 };
+
+export default PurchaseSuccess;

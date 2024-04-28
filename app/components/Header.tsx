@@ -1,12 +1,11 @@
 import { getServerSession } from "next-auth";
-import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { User } from "../types/types";
 import { nextAuthOptions } from "../lib/next-auth/options";
 
-export default async() => {
+const Header = async () => {
   const session = await getServerSession(nextAuthOptions);
   const user = session?.user as User;
 
@@ -32,7 +31,7 @@ export default async() => {
 
           {user && (
             <Link
-            href={'/api/auth/signout'}
+              href={"/api/auth/signout"}
               // onClick={() => signOut({ callbackUrl: "/login" })}
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
@@ -54,3 +53,4 @@ export default async() => {
     </header>
   );
 };
+export default Header;
