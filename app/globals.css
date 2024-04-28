@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content-body {
+  margin-block: 1em 3em;
+}
+.content-body h3 {
+  margin-top: 1em;
+}
+.content-body h3 strong {
+  font: 700 1em notoSansJP;
+}
