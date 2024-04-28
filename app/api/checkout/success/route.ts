@@ -5,7 +5,7 @@ import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // 購入履歴の保存
-export const POST = async (req: Request, res: Response) => {
+export async function POST(req: Request, res: Response) {
   const { sessionId } = await req.json();
 
   try {
