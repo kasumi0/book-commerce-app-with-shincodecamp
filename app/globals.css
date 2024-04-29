@@ -11,3 +11,9 @@
 .content-body h3 strong {
   font: 700 1em notoSansJP;
 }
+.excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

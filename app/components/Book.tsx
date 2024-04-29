@@ -86,7 +86,7 @@ const Book = ({ book, isPurchased }: BookProps) => {
       <div className="flex flex-col items-center m-4">
         <a
           onClick={handlePurchaseClick}
-          className="cursor-pointer shadow-2xl duration-300 hover:translate-y-1 hover:shadow-none"
+          className="cursor-pointer shadow-2xl duration-300 hover:translate-y-1 hover:shadow-none w-[400px]"
         >
           <Image
             priority
@@ -94,20 +94,20 @@ const Book = ({ book, isPurchased }: BookProps) => {
             alt={book.title}
             width={400}
             height={300}
-            className="rounded-t-md"
+            className="rounded-t-md w-full aspect-[16/9] object-cover object-center"
           />
-          <div className="px-4 py-4 bg-slate-100 rounded-b-md">
+          <div className="px-4 py-4 bg-slate-100 rounded-b-md w-full">
             <h2 className="text-lg font-semibold">{book.title}</h2>
-            <p className="mt-2 text-lg text-slate-600">
-              {/* {book.content} */}
-              本文です。本文です。本文です。本文です。
-            </p>
+            <div
+              className="mt-2 text-lg text-slate-600 excerpt"
+              dangerouslySetInnerHTML={{ __html: book.content }}
+            />
             <p className="mt-2 text-md text-slate-700">値段：{book.price}円</p>
           </div>
         </a>
 
         {showModal && (
-          <div className="absolute top-0 left-0 right-0 bottom-0 bg-slate-900 bg-opacity-50 flex justify-center items-center modal">
+          <div className="fixed inset-0 bg-slate-900 bg-opacity-50 flex justify-center items-center modal">
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-xl mb-4">本を購入しますか？</h3>
               <button
@@ -130,4 +130,4 @@ const Book = ({ book, isPurchased }: BookProps) => {
   );
 };
 
-export default Book
+export default Book;

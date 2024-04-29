@@ -39,7 +39,7 @@ const Header = async () => {
             </Link>
           )}
 
-          <Link href={`/profile`}>
+          <Link href={user ? "/profile" : "/"}>
             <Image
               width={50}
               height={50}
