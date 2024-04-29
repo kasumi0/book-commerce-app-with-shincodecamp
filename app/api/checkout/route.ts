@@ -26,9 +26,8 @@ export async function POST(req: Request, res: Response) {
         },
       ],
       mode: "payment",
-      success_url: `https://book-commerce-app-with-shincodecamp-blond.vercel.app/book/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url:
-        "https://book-commerce-app-with-shincodecamp-blond.vercel.app",
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/book/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
     });
     
     return NextResponse.json({checkout_url: session.url})
