@@ -3,7 +3,7 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
 
-export const Loading = () => {
+const LoadingSpinner = () => {
   // スピナーのサイズや色をカスタマイズできます
   const size = 50;
   const color = "#123abc";
@@ -24,3 +24,5 @@ export const Loading = () => {
     </div>
   );
 };
+
+export default LoadingSpinner
