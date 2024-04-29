@@ -11,7 +11,9 @@ export const getAllBooks = async () => {
     endpoint: "bookcommerce",
     //microCMSで記事投稿などした際のwebhookによる再ビルドを反映させるため、SSRにする
     customRequestInit: {
-      cache: "no-store",
+      next: {
+       revalidate: 3600
+      }
     },
   });
 
